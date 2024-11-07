@@ -1,0 +1,440 @@
+* {
+    margin: 0;
+  
+  }
+body {
+   
+    font-family: "Poppins", sans-serif;
+    background-color: #477987
+    
+}
+#root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #48A30012 ; */
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box; 
+    border: 10px rgb(234, 245, 234) solid;
+}
+#root h1 {
+    /* margin-bottom: 2%; */
+    margin-top: 0.5%;
+    /* padding-top: -75px; */
+    text-align: center;
+    color: rgb(234, 245, 234);
+    font-size: 3rem;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+}
+
+#box {
+    width:72% ;
+    height: 76%;
+    background-color:#f6f8f8;
+    border-radius: 30px;
+    border: 5px rgb(7, 7, 7) solid;
+    
+}
+#today {
+    color: #060606;
+    
+}
+
+#date-container {
+    font-size: 1.2rem; /* Adjust this value as needed */
+    font-family: Arial, sans-serif; /* You can change the font as desired */
+    color: #090909; /* Text color */
+    /* padding: 5rem 7rem; */
+    padding-top: 2rem;
+    padding-left: 1rem;
+    /* padding-left: 4rem; */
+    font-weight: bolder;
+  }
+
+img {
+    width: 30px; 
+    height: auto;
+    /* vertical-align:bottom; */
+    /* padding-top: 5rem; */
+    /* padding-left: 0.5rem; */
+    /* display:flex; */
+    /* align-items: center; */
+
+
+
+    position: relative; /* Position absolute to control the animation */
+    top: 0; /* Align to the top of the wrapper */
+    left: 0; /* Align to the left of the wrapper */
+    animation: rotateAnimation 5s linear infinite; /* Continuous rotation animation */
+    transform-origin: center; 
+
+    
+
+} 
+
+@keyframes rotateAnimation {
+    0% {
+        transform: rotate(0deg); /* Starting position */
+    }
+    25% {
+        transform: rotate(45deg); /* Move top to right */
+    }
+    50% {
+        transform: rotate(0deg); /* Move right to bottom */
+    }
+    75% {
+        transform: rotate(45deg); /* Move bottom to left */
+    }
+    100% {
+        transform: rotate(0deg); /* Back to starting position */
+    }
+}
+#date {
+    position: relative;
+    /* display: inline; */
+    display: flex;
+    align-items: center;
+    padding-top: 0.5rem;
+} 
+
+#box h2 {
+    font-size: 1rem; /* Adjust this value as needed */
+    font-family: Arial, sans-serif; /* You can change the font as desired */
+    color: #090909; /* Text color */
+    padding-top: 2rem;
+    padding-left: 1rem;
+    font-weight:lighter;
+    opacity:0.7
+    /* font-weight: bolder; */
+}  
+#bar{
+    background-color:  #e7ecec ;
+    Width: 80%;
+    height: 2rem;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    gap: 0px;
+    border-radius: 35px 35px 35px 35px;
+    opacity: 0px;
+
+} 
+#barbox {
+    background-color:#44abc7; 
+    border-radius: 35px 0px 0px 35px;
+    Width: 10%;
+    height: 2rem;
+    display: grid;
+}
+#barbox-content  {
+    z-index: 6;
+    color: #060606;
+    font-weight: 300;
+    font-size: 0.8rem;
+    /* opacity: 0.6; */
+    align-self: end;
+    padding-left: 1rem;
+    /* margin-top: auto; */
+
+}
+
+#alert {
+    display: none;
+    color: red;
+    font-size: 1.2rem; /* Adjust this value as needed */
+    font-family: Arial, sans-serif;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    font-weight:lighter
+    /* position: relative; */
+}
+.container {
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.2); /* Light black border */
+    /* padding: 10px; */
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-bottom: 2rem;
+    width: 90%;
+    height: 2.2rem;
+    overflow: hidden; 
+    border-radius: 38px; /* Rounded corners */
+}
+.input-box {
+    color: rgb(6, 6, 6); /* Default text color */
+    font-weight: normal;
+    /* font-weight: 100; */
+    font-size: 1px;
+    width: 50%;
+}
+
+
+
+
+
+.circle.selected {
+    background-color: #477987;
+    color: white;
+    text-decoration: line-through;
+  }
+.completed {
+    color:  #477987;      /* Change text color to green */
+    text-decoration: line-through;
+}  
+
+
+
+
+
+/* Style for the congratulatory message box */
+.alert-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color:   rgb(80, 121, 147);
+    padding: 2px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    z-index: 9999;
+    width: 60%; /* Increased width for larger box */
+    visibility: hidden;
+    opacity: 0;
+    border: 4px rgb(243, 242, 242) solid;
+    transition: opacity 0.5s, visibility 0.5s;
+    /* box-shadow: 0 50px 60px rgba(0, 0, 0, 1);
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.5); */
+    /* box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.9); */
+    /* box-shadow: 25px 25px 30px rgba(1, 1, 1, 0.9);
+    box-shadow: -25px -25px -30px rgba(1, 1, 1, 0.9); */
+    box-shadow: 
+    25px -25px 30px rgba(169, 168, 168, 0.5),   /* Top-right shadow */
+    -25px 25px 30px rgba(169, 168, 168, 0.5),   /* Bottom-left shadow */
+    -25px -25px 30px rgba(169, 168, 168, 0.5),  /* Top-left shadow */
+    25px 25px 30px rgba(169, 168, 168, 0.5);    /* Bottom-right shadow */
+     
+
+
+   
+}
+
+.alert-box h3 {
+    color: #0b0b0b; /* Changed to a darker green */
+    font-size: 1.4rem;
+    /* margin-bottom: 5px; */
+    font-weight:400;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.alert-box  span {
+    color: #fdfffd; /* Changed to a darker green */
+    padding-bottom: 15px;
+    font-size: 1.1rem;
+}
+.alert-box button {
+    background-color: rgb(6, 94, 114); /* Darker green for the button */
+    color: rgb(218, 216, 216);
+    border: 1px white solid;
+    padding: 12px 24px; /* Increased padding for larger button */
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: background-color 0.4s;
+    width: 5rem;            /* Sets the width of the button */
+    height: 2rem; 
+    border-radius: 50px;
+    padding-top: 5px;
+    /* text-align: center; */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+.alert-box button:hover {
+    background-color:#477987/* Darker shade on hover */
+}
+
+
+
+
+
+
+
+
+
+.circle {
+    width: 22px;
+    height: 22px;
+    /* background-color: black;  */
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin-left: 1rem;
+    margin-right: 1rem; /* Space between circle and input */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.checkmark {
+    font-size: 0.9rem;
+    color: rgb(250, 251, 250); /* You can change the color as needed */
+}
+
+.input-box {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0px;
+    font-size: 1rem;
+    opacity: 0.4;
+    height: 100%;
+
+}
+#box h1{
+    margin-top: 0.5rem; 
+    align-items: center;
+    font: bolder;
+    color: black;
+    font-size: 1rem;
+
+}
+footer{
+    font: bold;
+    font-size: 0.7rem;
+    padding: 7px;
+    /* margin: auto; */
+    text-align: center;
+}
+@media (min-width: 40rem) and (max-width: 45rem) {
+    #box {
+        width:60% ;
+    height:82% ;}
+        #date-container{
+            font-size: 1.6rem;}
+            #box h1{
+                font-size: 1rem;}
+                .alert-box  span{
+                    font-size: 1rem;
+                }
+                .alert-box h3 {
+                    font-size: 1.2rem;
+                }
+                .alert-box button{
+                    width: 5rem;            /* Sets the width of the button */
+                height: 2rem;  
+                font-size: 0.99rem;
+                text-align: center;
+                padding: 0%;
+                }
+                .alert-box {
+                    width: 50%;
+                }
+            
+}
+@media (min-width: 45rem) and (max-width: 65rem) {
+    #box {
+        width:47% ;
+        height:82% ;}
+    #date-container{
+            font-size: 1.7rem;}
+    #box h1{
+        font-size: 1rem;}
+        .alert-box  span{
+            font-size: 1.5rem;
+        }
+        .alert-box h3 {
+            font-size: 1.7rem;
+        }
+        .alert-box button{
+            width: 5rem;            /* Sets the width of the button */
+        height: 2rem;  
+        font-size: 0.99rem;
+        text-align: center;
+        padding: 0%;
+        }
+        .alert-box {
+            width: 50%;
+        }
+            
+}
+@media (min-width: 65rem) and (max-width: 70rem) {
+    #box {
+        width:38% ;
+        height: 84%;
+        background-color:#f6f8f8;
+        border-radius: 7px;
+        
+    }
+    #date-container{
+        font-size: 2rem;
+    }
+   
+    .alert-box  span{
+        font-size: 2rem;
+    }
+    .alert-box h3 {
+        font-size: 2.2rem;
+    }
+    .alert-box button{
+        width: 5rem;            /* Sets the width of the button */
+    height: 2rem;  
+    font-size: 0.99rem;
+    text-align: center;
+    padding: 0%;
+    }
+    .alert-box {
+        width: 45%;
+    }
+    img {
+        padding-left: 0%;
+        size: 1rem;
+    }
+    #box h2 {
+        font-size: 1.2rem;
+    }
+
+
+}
+@media (min-width: 70rem) and (max-width: 150rem) {
+    #box {
+        width:40% ;
+        height: 78%;
+        background-color:#f6f8f8;
+        border-radius: 7px;
+        
+    }
+    #box h2 {
+        font-size: 1.7rem; /* Adjust this value as needed */
+        margin-top: -1%;
+    } 
+    #date-container{
+        font-size: 1.9rem;
+    }
+    #box h2 {
+        font-size: 1.2rem;
+    }
+    .alert-box  span{
+        font-size: 2rem;
+    }
+    .alert-box h3 {
+        font-size: 2rem;
+    }
+    .alert-box button{
+        width: 5rem;            /* Sets the width of the button */
+    height: 2rem;  
+    font-size: 0.99rem;
+    text-align: center;
+    padding: 0%;
+    }
+    .alert-box {
+        width: 55%;
+        height: 25%;
+    }
+} 
