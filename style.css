@@ -14,8 +14,8 @@ body {
     align-items: center;
     justify-content: center;
     /* background-color: #48A30012 ; */
-    width: 100%;
-    height: 100vh;
+    /* width: 100%; */
+    /* height: 100vh; */
     box-sizing: border-box; 
     border: 10px rgb(234, 245, 234) solid;
 }
@@ -36,6 +36,8 @@ body {
     background-color:#f6f8f8;
     border-radius: 30px;
     border: 5px rgb(7, 7, 7) solid;
+    margin-bottom: 5%;
+    /* padding-bottom: -20%; */
     
 }
 #today {
@@ -75,23 +77,7 @@ img {
 
 } 
 
-@keyframes rotateAnimation {
-    0% {
-        transform: rotate(0deg); /* Starting position */
-    }
-    25% {
-        transform: rotate(45deg); /* Move top to right */
-    }
-    50% {
-        transform: rotate(0deg); /* Move right to bottom */
-    }
-    75% {
-        transform: rotate(45deg); /* Move bottom to left */
-    }
-    100% {
-        transform: rotate(0deg); /* Back to starting position */
-    }
-}
+
 #date {
     position: relative;
     /* display: inline; */
@@ -178,7 +164,7 @@ img {
 .circle.selected {
     background-color: #477987;
     color: white;
-    text-decoration: line-through;
+    /* text-decoration: line-through; */
   }
 .completed {
     color:  #477987;      /* Change text color to green */
@@ -192,11 +178,12 @@ img {
 /* Style for the congratulatory message box */
 .alert-box {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
     background-color:   rgb(80, 121, 147);
     padding: 2px;
+    /* transition: opacity 0.5s ease, transform 0.5s ease; */
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
     text-align: center;
@@ -206,13 +193,6 @@ img {
     opacity: 0;
     border: 4px rgb(243, 242, 242) solid;
     transition: opacity 0.5s, visibility 0.5s;
-    /* box-shadow: 0 50px 60px rgba(0, 0, 0, 1);
-    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.5);
-    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.5);
-    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.5); */
-    /* box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.9); */
-    /* box-shadow: 25px 25px 30px rgba(1, 1, 1, 0.9);
-    box-shadow: -25px -25px -30px rgba(1, 1, 1, 0.9); */
     box-shadow: 
     25px -25px 30px rgba(169, 168, 168, 0.5),   /* Top-right shadow */
     -25px 25px 30px rgba(169, 168, 168, 0.5),   /* Bottom-left shadow */
@@ -262,7 +242,33 @@ img {
 
 
 
+.button{
+    width:  4.5rem;
+    height: 2.2rem;
+    background-color: #477987;
+    color: white;
+    border: none;
+    /* border-radius: 50%; */
+    font-size: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+#buttondiv{
+    display: flex;
+    justify-content: center;
+   margin-bottom: 20px;
+}
 
+.button:hover {
+    background-color: #44ABC7;
+    transform: scale(1.1);
+}
 
 
 

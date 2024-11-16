@@ -6,7 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <!-- <link rel="stylesheet"  href="todo.js"> -->
-    <script src="todo.js" defer > </script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
             </div>
             <h2>Raise the bar by completing your goals!</h2>
             <div id="bar">
-                <div id="barbox"> <h4 id="barbox-content" ><span id="value" >0</span>/3</h4>
+                <div id="barbox"> <h4 id="barbox-content" ><span id="value" >0</span>/<span id="finalvalue" >3</span></h4>
                 </div>
                 <!-- <h4 id="barbox-content" ><span id="value" ></span>/3</h4> -->
             </div>
@@ -39,7 +39,10 @@
 
 
             <h3 id="alert">Please set all the 3 goals</h3>
-            <div class="container" id="container-1">
+
+
+        <div id="task-container">
+            <!-- <div class="container" id="container-1">
                 <div class="circle" onclick="toggleCircle(this)" id="circle-1"> <span class="checkmark">✔</span></div>
                 <input type="text" class="input-box" placeholder="Enter today's task here......">
             </div>
@@ -50,11 +53,18 @@
             <div class="container" id="container-3">
                 <div class="circle" onclick="toggleCircle(this)" id="circle-3"> <span class="checkmark">✔</span></div>
                 <input type="text" class="input-box" placeholder="Enter today's task here......">
+            </div> -->
+        </div>
+            <div id="buttondiv">
+                <button  id="add-task-btn" class="button">ADD TASK</button>
+                <button id="refresh"  class="button" >REFRESH</button>
             </div>
             <h1>"Move one step ahead, today!"</h1>
             <footer>Made with  ❤️ by BK...</footer>
         </div>
     </div>
 
+
+    <script src="todo.js" defer > </script>
 </body>
 </html>
